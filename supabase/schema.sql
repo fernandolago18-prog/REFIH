@@ -71,10 +71,10 @@ alter table public.medication_exchanges enable row level security;
 alter table public.audit_logs enable row level security;
 
 -- Hospitals RLS:
--- Anyone authenticated can view hospitals (needed for the map)
-create policy "Authenticated users can view hospitals" 
+-- Anyone can view hospitals (needed for the public map on the Home page)
+create policy "Anyone can view hospitals" 
     on public.hospitals for select 
-    to authenticated using (true);
+    using (true);
 
 -- Hospitals can only update their own profile
 create policy "Hospitals can update own profile" 
