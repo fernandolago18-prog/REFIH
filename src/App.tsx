@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import RootLayout from './layouts/RootLayout';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import MapView from './pages/Map';
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Home />} />
             <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
             
             {/* Protected Routes */}
             <Route path="dashboard" element={

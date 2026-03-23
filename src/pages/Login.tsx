@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { Building2, Lock } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -112,8 +112,14 @@ export default function Login() {
               </button>
             </div>
           </form>
-          <div className="mt-6 text-center">
-            <p className="text-xs text-gray-400">
+          <div className="mt-6 text-center pt-2">
+            <p className="text-sm text-gray-600 mb-4 font-medium block">
+              ¿Tu centro aún no forma parte de la red?{' '}
+              <Link to="/register" className="font-bold text-blue-800 hover:text-blue-900 underline underline-offset-2 transition-colors">
+                Solicitar Alta Institucional
+              </Link>
+            </p>
+            <p className="text-[11px] text-gray-400">
               Uso exclusivo para personal autorizado. Conexión cifrada TLS 1.3.
             </p>
           </div>
