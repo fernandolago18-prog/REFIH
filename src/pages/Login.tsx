@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
-import { Building2, Lock } from 'lucide-react';
+import { Network, Lock } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Login() {
@@ -42,8 +42,8 @@ export default function Login() {
         <div className="bg-white p-10 rounded-xl shadow-sm border border-[#E2E8F0]">
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
-              <div className="bg-[#0F172A] p-3 rounded-lg flex items-center justify-center shadow-sm">
-                <Building2 className="h-6 w-6 text-white" />
+              <div className="bg-gradient-to-br from-blue-700 to-[#0F172A] p-3 rounded-lg flex items-center justify-center shadow-sm">
+                <Network className="h-6 w-6 text-white" />
               </div>
             </div>
             <h2 className="text-2xl font-bold text-[#0F172A] tracking-tight">

@@ -53,7 +53,7 @@ export default function Home() {
               variants={itemVariants} 
               className="text-lg text-gray-500 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium"
             >
-              Un sistema centralizado para la reubicación de fármacos próximos a caducar. Conozca la red de centros, reduzca el impacto económico y garantice un suministro coordinado y sin desperdicios.
+              <strong>REFIH</strong> (Red de Intercambio de Fármacos Inter-Hospitalaria) es un sistema centralizado para la reubicación de medicamentos próximos a caducar. Conecta a la red de hospitales, reduce el impacto económico y garantiza un suministro coordinado y sin desperdicios.
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
@@ -110,6 +110,60 @@ export default function Home() {
             </div>
           </div>
         </motion.div>
+
+        {/* Nueva Sección: Misión e Impacto en SNS */}
+        <motion.div variants={itemVariants} className="mt-20 pt-16 border-t border-gray-200">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold text-[#0F172A] mb-6">Nuestra Misión y el Sistema Nacional de Salud</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              La misión principal de <strong>REFIH</strong> es garantizar que ningún fármaco de alto valor se desperdicie mientras haya un paciente que lo necesite en otro centro. Optimizamos los recursos del <strong>Sistema Nacional de Salud (SNS)</strong> mediante la colaboración directa e inteligente entre los servicios de farmacia hospitalaria.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-blue-50 rounded-3xl p-8 lg:p-12 border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h3 className="text-2xl font-bold text-[#0F172A] mb-6">Impacto Económico y Asistencial</h3>
+              <ul className="space-y-6">
+                <li className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mt-0.5 shadow-sm">
+                    <span className="text-sm font-bold">1</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#0F172A] mb-1">Eficiencia del Gasto Público</h4>
+                    <p className="text-gray-700 text-sm leading-relaxed">Reducción drástica de las pérdidas por caducidad en medicación de alto impacto económico, como terapias biológicas, oncológicas y medicamentos huérfanos.</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mt-0.5 shadow-sm">
+                    <span className="text-sm font-bold">2</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#0F172A] mb-1">Equidad en el Acceso</h4>
+                    <p className="text-gray-700 text-sm leading-relaxed">Facilita que hospitales con desabastecimientos puntuales u picos de demanda obtengan tratamientos críticos de forma inmediata desde otros centros con excedentes temporales.</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mt-0.5 shadow-sm">
+                    <span className="text-sm font-bold">3</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#0F172A] mb-1">Sostenibilidad Ecológica</h4>
+                    <p className="text-gray-700 text-sm leading-relaxed">Disminución sustancial del volumen de residuos farmacológicos e intermedios que requieren protocolos especiales de destrucción, reduciendo así la huella de carbono del SNS.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div className="relative h-[400px] md:h-full min-h-[350px] rounded-2xl overflow-hidden shadow-lg border-4 border-white">
+              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Profesionales sanitarios colaborando" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/40 to-transparent flex items-end p-8">
+                <p className="text-white font-medium text-lg leading-snug border-l-4 border-blue-500 pl-4">
+                  Construyendo una red de salud pública más fuerte, unida y verdaderamente sostenible interconectando todos los hospitales.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
       </motion.div>
     </div>
   );

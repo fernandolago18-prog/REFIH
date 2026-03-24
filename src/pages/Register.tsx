@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
-import { Building2, UserPlus } from 'lucide-react';
+import { Building2, Network } from 'lucide-react';
 import { motion } from 'framer-motion';
+import LocationPicker from '../components/LocationPicker';
 
 const COMUNIDADES = [
   'Andalucía', 'Aragón', 'Asturias', 'Islas Baleares', 'Canarias', 
@@ -21,6 +22,11 @@ export default function Register() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+
+  const handleLocationSelect = (lat: number, lng: number) => {
+    setLatitude(lat.toString());
+    setLongitude(lng.toString());
+  };
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,8 +90,8 @@ export default function Register() {
         <div className="bg-white p-8 sm:p-10 rounded-xl shadow-lg border border-[#E2E8F0]">
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
-              <div className="bg-[#0F172A] p-3 rounded-lg flex items-center justify-center shadow-md">
-                <UserPlus className="h-6 w-6 text-white" />
+              <div className="bg-gradient-to-br from-blue-700 to-[#0F172A] p-3 rounded-lg flex items-center justify-center shadow-md">
+                <Network className="h-6 w-6 text-white" />
               </div>
             </div>
             <h2 className="text-2xl font-bold text-[#0F172A] tracking-tight">
@@ -152,32 +158,18 @@ export default function Register() {
                 />
               </div>
 
-              <div>
+              <div className="md:col-span-2">
                 <label className="block text-sm font-bold text-gray-700 mb-1">
-                  Latitud <span className="text-red-500">*</span>
+                  Ubicación del Centro <span className="text-red-500">*</span>
                 </label>
-                <input
-                  type="text"
-                  required
-                  className="appearance-none rounded-md relative block w-full px-4 py-2 border border-gray-300 placeholder-gray-400 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0F172A] sm:text-sm"
-                  placeholder="Ej: 40.4168"
-                  value={latitude}
-                  onChange={(e) => setLatitude(e.target.value)}
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-bold text-gray-700 mb-1">
-                  Longitud <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  required
-                  className="appearance-none rounded-md relative block w-full px-4 py-2 border border-gray-300 placeholder-gray-400 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0F172A] sm:text-sm"
-                  placeholder="Ej: -3.7038"
-                  value={longitude}
-                  onChange={(e) => setLongitude(e.target.value)}
-                />
+                <div className="mb-2">
+                  <LocationPicker onLocationSelect={handleLocationSelect} />
+                </div>
+                {(!latitude || !longitude) && (
+                  <p className="text-sm text-red-500 mt-1">
+                    Debe seleccionar la ubicación de su centro en el mapa.
+                  </p>
+                )}
               </div>
 
               <div className="md:col-span-2">

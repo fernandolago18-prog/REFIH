@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { Building2, Map as MapIcon, LogOut, LayoutDashboard } from 'lucide-react';
+import { Network, Map as MapIcon, LogOut, LayoutDashboard } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 export default function Navbar() {
@@ -19,8 +19,8 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="bg-[#0F172A] text-white p-2 rounded shadow-sm group-hover:bg-[#1E293B] transition-colors">
-                <Building2 className="h-5 w-5" />
+              <div className="bg-gradient-to-br from-blue-700 to-[#0F172A] text-white p-2 rounded shadow-sm group-hover:shadow-md transition-all">
+                <Network className="h-5 w-5" />
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-lg tracking-tight text-[#0F172A] leading-none">REFIH</span>
